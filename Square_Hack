@@ -1,0 +1,34 @@
+
+using System;
+
+namespace Square_hack
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            char[,] array1 = { {'r','a','f','a','l'}, {'c','h','o','m','a'},{'c','u','b','i','c'},{'a','b','c','d','e'}
+            ,{'f','g','h','i','j'} };
+            char[,] array2 = new char[5, 5];
+            System.Array.Clear(array2, 0, array2.Length);
+            Console.WriteLine("Before Hacking:");
+            for (int i = 0; i <= 4; i++)
+            {
+                for (int j = 0; j <= 4; j++)
+                    Console.WriteLine("array1[{0},{1}]={2}", i, j, array1[i, j]);
+            }
+            for (int i = 0; i <= 4; i++)
+            {
+                for (int j = 0; j <= 4; j++)
+                    array2[i, j] = array1[j, i];
+            }
+            Console.WriteLine("After Hacking:");
+            for (int i = 0; i <= 4; i++)
+            {
+                for (int j = 0; j <= 4; j++)
+                    Console.WriteLine("array2[{0},{1}]={2}", i, j, array2[i, j]);
+            }
+            Console.ReadKey();
+        }
+    }
+}
